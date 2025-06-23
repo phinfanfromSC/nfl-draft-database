@@ -3,6 +3,8 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Menu, X, Search } from "lucide-react"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -42,13 +44,17 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* Mobile menu button */}
-          <button 
-            className="md:hidden p-2"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? '✕' : '☰'}
-          </button>
+          {/* Search and Mobile Menu */}
+          <div className="flex items-center space-x-4">
+            <Button variant="ghost" size="sm" className="hover:text-brand-primary">
+              <Search className="h-4 w-4" />
+            </Button>
+
+            {/* Mobile menu button */}
+            <Button variant="ghost" size="sm" className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
