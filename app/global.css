@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* NFL Draft Database brand colors */
+    --brand-primary: 0 74 173; /* #004aad */
+    --brand-secondary: 255 222 89; /* #ffde59 */
+    --brand-accent: 0 45 107; /* #002d6b */
+
+    /* Updated shadcn variables with your brand colors */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 0 74 173; /* Your brand primary */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 98%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 255 222 89; /* Your brand secondary */
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 0 74 173; /* Your brand primary */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 255 222 89; /* Secondary color for dark mode */
+    --primary-foreground: 0 0% 0%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 255 222 89; /* Your brand secondary */
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 255 222 89;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+
+  /* Custom brand utilities */
+  .text-brand-primary {
+    color: rgb(var(--brand-primary));
+  }
+
+  .bg-brand-primary {
+    background-color: rgb(var(--brand-primary));
+  }
+
+  .text-brand-secondary {
+    color: rgb(var(--brand-secondary));
+  }
+
+  .bg-brand-secondary {
+    background-color: rgb(var(--brand-secondary));
+  }
+
+  .border-brand-primary {
+    border-color: rgb(var(--brand-primary));
+  }
+}
+
+@layer components {
+  .btn-brand {
+    @apply bg-brand-primary text-white hover:bg-brand-accent transition-colors;
+  }
+
+  .gradient-brand {
+    background: linear-gradient(135deg, rgb(var(--brand-primary)), rgb(var(--brand-accent)));
+  }
+
+  .gradient-secondary {
+    background: linear-gradient(135deg, rgb(var(--brand-secondary)), #ffd700);
+  }
+}
